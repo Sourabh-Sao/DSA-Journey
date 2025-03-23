@@ -1,8 +1,9 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-// Solution 1
-//  bool isAlphanumeric(char ch)
+
+// solution 1
+// bool isAlphanumeric(char ch)
 // {
 //     if ((ch>='0' && ch<='9') || 
 //     (tolower(ch)>='a' && tolower(ch)<='z'))
@@ -38,16 +39,20 @@ using namespace std;
 //     return true; 
 //     }
 
-// Solution 2
+
+// solution 2
+// isalnum() is built in function to check any character is alphanumeric or not
 bool isPalindrome(string s){
     int n=s.length();
     int st=0,end=n-1;
     while (st<end)
     {
+        // jab tak st alphanumeric nahi h tab tak usko increment karenge
         if (!isalnum(s[st])){
             st++;
             continue; 
         }
+        // jab tak end alphanumeric nahi h tab tak usko increment karenge
         if (!isalnum(s[end])){
             end--;
             continue;
