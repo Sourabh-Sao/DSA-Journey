@@ -22,27 +22,29 @@ using namespace std;
 
 
 int main(){
-    vector<int>price={100,80,60,70,60,75,85};
+   vector<int>price={100,80,60,70,60,75,85};
     int n=price.size();
-    vector<int>ans(n,0);
     stack<int>s;
-
-    for (int i = 0; i < price.size(); i++)
+    vector<int>ans(n,0);
+    for (int i = 0; i < n; i++)
     {
+        // finding the previous high element of today and poping the smaller element
         while (s.size()>0 && price[s.top()]<=price[i])
         {
             s.pop();
         }
 
+        // if stack is empty then ans[i] will be i+1 because there is no 
+        // previous element
         if (s.empty())
         {
             ans[i]=i+1;
         }else{
+            // if stack is not empty then ans[i] will be i-s.top() , i-s.top() 
+            // is the distance between the current element and the previous high element
             ans[i]=i-s.top();
-
         }
         s.push(i);
-        
     }
     
     for(int val:ans){
