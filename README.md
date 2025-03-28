@@ -1,2 +1,2 @@
 # DSA-Journey
-In this repository I will post all my DSA questions and their solutions
+In this repository, I post all my DSA questions and their solutions
